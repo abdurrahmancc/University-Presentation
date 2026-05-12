@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import logo from "../assets/logo.png";
 import {
   ShoppingBag,
   Lock,
@@ -25,7 +26,9 @@ import {
   FileText,
   Target,
   Layers,
-  Zap
+  Zap,
+  Moon,
+  Sun
 } from 'lucide-react';
 
 const slides = [
@@ -108,21 +111,23 @@ const slides = [
 
 function TitleSlide() {
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-green-50 to-white">
+    <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-green-50 to-white dark:from-gray-900 dark:to-gray-800">
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: 'spring', duration: 0.8 }}
-        className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mb-8 shadow-2xl"
+        // className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mb-8 shadow-2xl"
+        className="w-32 h-32 rounded-full flex items-center justify-center mb-8 "
       >
-        <Leaf className="w-12 h-12 text-white" />
+        {/* <Leaf className="w-12 h-12 text-white" /> */}
+        <img src={logo} alt="Logo" />
       </motion.div>
 
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="text-6xl mb-3 text-gray-800"
+        className="text-6xl mb-3 text-gray-800 dark:text-white"
       >
         Fresh
       </motion.h1>
@@ -131,7 +136,7 @@ function TitleSlide() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="text-2xl text-green-600 mb-2"
+        className="text-2xl text-green-600 dark:text-green-400 mb-2"
       >
         React/Redux eCommerce Website
       </motion.p>
@@ -140,7 +145,7 @@ function TitleSlide() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        className="text-xl text-gray-600 mb-12"
+        className="text-xl text-gray-600 dark:text-gray-300 mb-12"
       >
         Final Year Project Presentation
       </motion.p>
@@ -149,18 +154,18 @@ function TitleSlide() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8 }}
-        className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl"
+        className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 max-w-2xl border dark:border-gray-700"
       >
-        <p className="text-lg mb-4 text-gray-700">Presented By:</p>
+        <p className="text-lg mb-4 text-gray-700 dark:text-gray-300">Presented By:</p>
         <div className="space-y-2">
-          <p className="text-gray-800"><span className="text-green-600">●</span> Md Abdur Rahman (Team Leader)</p>
-          <p className="text-gray-800"><span className="text-green-600">●</span> Md. Nayem Uddin</p>
-          <p className="text-gray-800"><span className="text-green-600">●</span> Md Anwar Hossain</p>
-          <p className="text-gray-800"><span className="text-green-600">●</span> Md Habibur Rahman</p>
+          <p className="text-gray-800 dark:text-gray-200"><span className="text-green-600 dark:text-green-400">●</span> Md Abdur Rahman (Team Leader)</p>
+          <p className="text-gray-800 dark:text-gray-200"><span className="text-green-600 dark:text-green-400">●</span> Md. Nayem Uddin</p>
+          <p className="text-gray-800 dark:text-gray-200"><span className="text-green-600 dark:text-green-400">●</span> Md Anwar Hossain</p>
+          <p className="text-gray-800 dark:text-gray-200"><span className="text-green-600 dark:text-green-400">●</span> Md Habibur Rahman</p>
         </div>
-        <div className="mt-6 pt-6 border-t border-gray-200">
-          <p className="text-gray-700">Department of CSE</p>
-          <p className="text-green-600">Uttara University</p>
+        <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+          <p className="text-gray-700 dark:text-gray-300">Department of CSE</p>
+          <p className="text-green-600 dark:text-green-400">Uttara University</p>
         </div>
       </motion.div>
     </div>
@@ -184,10 +189,10 @@ function ProjectOverviewSlide() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl shadow-lg border border-green-100"
+            className="bg-gradient-to-br from-green-50 to-white dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl shadow-lg border border-green-100 dark:border-green-900"
           >
-            <feature.icon className="w-10 h-10 text-green-600 mb-3" />
-            <p className="text-gray-700">{feature.text}</p>
+            <feature.icon className="w-10 h-10 text-green-600 dark:text-green-400 mb-3" />
+            <p className="text-gray-700 dark:text-gray-300">{feature.text}</p>
           </motion.div>
         ))}
       </div>
@@ -212,12 +217,12 @@ function ObjectivesSlide() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 }}
-            className="flex items-start gap-4 bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500"
+            className="flex items-start gap-4 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-green-500"
           >
-            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <obj.icon className="w-6 h-6 text-green-600" />
+            <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center flex-shrink-0">
+              <obj.icon className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <p className="text-gray-700 pt-2">{obj.text}</p>
+            <p className="text-gray-700 dark:text-gray-300 pt-2">{obj.text}</p>
           </motion.div>
         ))}
       </div>
@@ -325,15 +330,15 @@ function AuthSecuritySlide() {
             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.15 }}
-            className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-green-500"
+            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-t-4 border-green-500"
           >
             <div className="flex items-center gap-4 mb-3">
-              <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center">
-                <item.icon className="w-7 h-7 text-green-600" />
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center">
+                <item.icon className="w-7 h-7 text-green-600 dark:text-green-400" />
               </div>
-              <h3 className="text-xl text-gray-800">{item.title}</h3>
+              <h3 className="text-xl text-gray-800 dark:text-gray-200">{item.title}</h3>
             </div>
-            <p className="text-gray-600 ml-[4.5rem]">{item.desc}</p>
+            <p className="text-gray-600 dark:text-gray-400 ml-[4.5rem]">{item.desc}</p>
           </motion.div>
         ))}
       </div>
@@ -359,39 +364,39 @@ function PaymentSlide() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-white p-6 rounded-xl shadow-lg text-center border border-green-100"
+            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center border border-green-100 dark:border-green-900"
           >
-            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-              <CheckCircle2 className="w-6 h-6 text-green-600" />
+            <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
+              <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <h3 className="text-lg mb-2 text-gray-800">Stripe Payment Gateway</h3>
-            <p className="text-gray-600">Industry-standard payment processing</p>
+            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">Stripe Payment Gateway</h3>
+            <p className="text-gray-600 dark:text-gray-400">Industry-standard payment processing</p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white p-6 rounded-xl shadow-lg text-center border border-green-100"
+            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center border border-green-100 dark:border-green-900"
           >
-            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Shield className="w-6 h-6 text-green-600" />
+            <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Shield className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <h3 className="text-lg mb-2 text-gray-800">Secure Transactions</h3>
-            <p className="text-gray-600">End-to-end encryption</p>
+            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">Secure Transactions</h3>
+            <p className="text-gray-600 dark:text-gray-400">End-to-end encryption</p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-white p-6 rounded-xl shadow-lg text-center border border-green-100"
+            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center border border-green-100 dark:border-green-900"
           >
-            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Zap className="w-6 h-6 text-green-600" />
+            <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Zap className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <h3 className="text-lg mb-2 text-gray-800">Real-time Processing</h3>
-            <p className="text-gray-600">Instant payment confirmation</p>
+            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">Real-time Processing</h3>
+            <p className="text-gray-600 dark:text-gray-400">Instant payment confirmation</p>
           </motion.div>
         </div>
       </div>
@@ -409,7 +414,7 @@ function DatabaseSlide() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: 'spring' }}
-          className="w-24 h-24 bg-gray-800 rounded-xl flex items-center justify-center mb-8 shadow-xl"
+          className="w-24 h-24 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center mb-8 shadow-xl"
         >
           <Database className="w-12 h-12 text-green-400" />
         </motion.div>
@@ -430,10 +435,10 @@ function DatabaseSlide() {
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 + index * 0.1, type: 'spring' }}
-              className="bg-white p-6 rounded-xl shadow-lg text-center border-2 border-green-500"
+              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center border-2 border-green-500"
             >
-              <Layers className="w-8 h-8 text-green-600 mx-auto mb-2" />
-              <p className="text-gray-800">{collection}</p>
+              <Layers className="w-8 h-8 text-green-600 dark:text-green-400 mx-auto mb-2" />
+              <p className="text-gray-800 dark:text-gray-200">{collection}</p>
             </motion.div>
           ))}
         </div>
@@ -459,10 +464,10 @@ function UserDashboardSlide() {
             initial={{ opacity: 0, rotate: -5 }}
             animate={{ opacity: 1, rotate: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-gradient-to-br from-green-50 to-white p-8 rounded-xl shadow-lg border border-green-200 hover:shadow-2xl transition-shadow"
+            className="bg-gradient-to-br from-green-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg border border-green-200 dark:border-green-900 hover:shadow-2xl transition-shadow"
           >
-            <feature.icon className="w-14 h-14 text-green-600 mb-4" />
-            <p className="text-xl text-gray-800">{feature.text}</p>
+            <feature.icon className="w-14 h-14 text-green-600 dark:text-green-400 mb-4" />
+            <p className="text-xl text-gray-800 dark:text-gray-200">{feature.text}</p>
           </motion.div>
         ))}
       </div>
@@ -517,7 +522,7 @@ function ArchitectureSlide() {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl text-green-600"
+            className="text-4xl text-green-600 dark:text-green-400"
           >
             →
           </motion.div>
@@ -536,7 +541,7 @@ function ArchitectureSlide() {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.7 }}
-            className="text-4xl text-green-600"
+            className="text-4xl text-green-600 dark:text-green-400"
           >
             →
           </motion.div>
@@ -557,26 +562,26 @@ function ArchitectureSlide() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1 }}
-            className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500"
+            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-orange-500"
           >
             <div className="flex items-center gap-3 mb-2">
-              <Shield className="w-8 h-8 text-orange-600" />
-              <p className="text-lg text-gray-800">Authentication</p>
+              <Shield className="w-8 h-8 text-orange-600 dark:text-orange-400" />
+              <p className="text-lg text-gray-800 dark:text-gray-200">Authentication</p>
             </div>
-            <p className="text-gray-600 ml-11">Firebase + JWT</p>
+            <p className="text-gray-600 dark:text-gray-400 ml-11">Firebase + JWT</p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
-            className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-500"
+            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-purple-500"
           >
             <div className="flex items-center gap-3 mb-2">
-              <CreditCard className="w-8 h-8 text-purple-600" />
-              <p className="text-lg text-gray-800">Payment</p>
+              <CreditCard className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+              <p className="text-lg text-gray-800 dark:text-gray-200">Payment</p>
             </div>
-            <p className="text-gray-600 ml-11">Stripe</p>
+            <p className="text-gray-600 dark:text-gray-400 ml-11">Stripe</p>
           </motion.div>
         </div>
       </div>
@@ -601,12 +606,12 @@ function ChallengesSlide() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500 flex items-center gap-4"
+            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-orange-500 flex items-center gap-4"
           >
-            <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-orange-600">{index + 1}</span>
+            <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-orange-600 dark:text-orange-400">{index + 1}</span>
             </div>
-            <p className="text-gray-800">{challenge}</p>
+            <p className="text-gray-800 dark:text-gray-200">{challenge}</p>
           </motion.div>
         ))}
       </div>
@@ -668,10 +673,10 @@ function ConclusionSlide() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.2 }}
-              className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500 flex items-center gap-4"
+              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-green-500 flex items-center gap-4"
             >
-              <CheckCircle2 className="w-8 h-8 text-green-600 flex-shrink-0" />
-              <p className="text-xl text-gray-800">{point}</p>
+              <CheckCircle2 className="w-8 h-8 text-green-600 dark:text-green-400 flex-shrink-0" />
+              <p className="text-xl text-gray-800 dark:text-gray-200">{point}</p>
             </motion.div>
           ))}
         </div>
@@ -682,21 +687,23 @@ function ConclusionSlide() {
 
 function ThankYouSlide() {
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-green-50 via-white to-green-50">
+    <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-green-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: 'spring', duration: 0.8 }}
-        className="w-32 h-32 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mb-8 shadow-2xl"
+        // className="w-32 h-32 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mb-8 shadow-2xl"
+        className="w-32 h-32 rounded-full flex items-center justify-center mb-8"
       >
-        <Leaf className="w-16 h-16 text-white" />
+        {/* <Leaf className="w-16 h-16 text-white" /> */}
+                <img src={logo} alt="Logo" />
       </motion.div>
 
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="text-6xl mb-4 text-gray-800"
+        className="text-6xl mb-4 text-gray-800 dark:text-white"
       >
         Thank You!
       </motion.h1>
@@ -705,7 +712,7 @@ function ThankYouSlide() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="text-3xl text-green-600 mb-12"
+        className="text-3xl text-green-600 dark:text-green-400 mb-12"
       >
         Questions & Answers
       </motion.p>
@@ -714,10 +721,10 @@ function ThankYouSlide() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
-        className="bg-white rounded-2xl shadow-xl p-8"
+        className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border dark:border-gray-700"
       >
-        <p className="text-xl text-gray-700 mb-4">Fresh - MERN eCommerce Platform</p>
-        <p className="text-gray-600">Department of CSE, Uttara University</p>
+        <p className="text-xl text-gray-700 dark:text-gray-300 mb-4">Fresh - MERN eCommerce Platform</p>
+        <p className="text-gray-600 dark:text-gray-400">Department of CSE, Uttara University</p>
       </motion.div>
     </div>
   );
@@ -725,7 +732,7 @@ function ThankYouSlide() {
 
 function SlideLayout({ title, icon: Icon, children }: { title: string; icon: any; children: React.ReactNode }) {
   return (
-    <div className="h-full flex flex-col p-12">
+    <div className="h-full flex flex-col p-12 bg-gray-50 dark:bg-gray-900">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -734,7 +741,7 @@ function SlideLayout({ title, icon: Icon, children }: { title: string; icon: any
         <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
           <Icon className="w-7 h-7 text-white" />
         </div>
-        <h2 className="text-4xl text-gray-800">{title}</h2>
+        <h2 className="text-4xl text-gray-800 dark:text-white">{title}</h2>
       </motion.div>
       <div className="flex-1 overflow-auto">
         {children}
@@ -746,6 +753,19 @@ function SlideLayout({ title, icon: Icon, children }: { title: string; icon: any
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+  };
 
   const nextSlide = () => {
     if (currentSlide < slides.length - 1) {
@@ -784,7 +804,7 @@ export default function App() {
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="size-full bg-gray-50 flex flex-col">
+    <div className="size-full bg-gray-50 dark:bg-gray-900 flex flex-col">
       <div className="flex-1 relative overflow-hidden">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
@@ -805,7 +825,7 @@ export default function App() {
         </AnimatePresence>
       </div>
 
-      <div className="bg-white border-t border-gray-200 p-4">
+      <div className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 p-4">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <button
             onClick={prevSlide}
@@ -824,14 +844,25 @@ export default function App() {
                 className={`w-2 h-2 rounded-full transition-all ${
                   index === currentSlide
                     ? 'bg-green-500 w-8'
-                    : 'bg-gray-300 hover:bg-gray-400'
+                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
                 }`}
               />
             ))}
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="text-gray-600">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {isDark ? (
+                <Sun className="w-5 h-5 text-yellow-500" />
+              ) : (
+                <Moon className="w-5 h-5 text-gray-700" />
+              )}
+            </button>
+            <span className="text-gray-600 dark:text-gray-400">
               {currentSlide + 1} / {slides.length}
             </span>
             <button
