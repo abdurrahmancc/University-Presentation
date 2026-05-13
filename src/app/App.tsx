@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import logo from "../assets/logo.png";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import img from "../assets/logo.png";
 import {
   ShoppingBag,
   Lock,
@@ -28,106 +28,105 @@ import {
   Layers,
   Zap,
   Moon,
-  Sun
-} from 'lucide-react';
+  Sun,
+} from "lucide-react";
 
 const slides = [
   {
     id: 1,
-    title: 'Title',
-    component: TitleSlide
+    title: "Title",
+    component: TitleSlide,
   },
   {
     id: 2,
-    title: 'Project Overview',
-    component: ProjectOverviewSlide
+    title: "Project Overview",
+    component: ProjectOverviewSlide,
   },
   {
     id: 3,
-    title: 'Objectives',
-    component: ObjectivesSlide
+    title: "Objectives",
+    component: ObjectivesSlide,
   },
   {
     id: 4,
-    title: 'Technologies Used',
-    component: TechnologiesSlide
+    title: "Technologies Used",
+    component: TechnologiesSlide,
   },
   {
     id: 5,
-    title: 'Main Features',
-    component: FeaturesSlide
+    title: "Main Features",
+    component: FeaturesSlide,
   },
   {
     id: 6,
-    title: 'Authentication & Security',
-    component: AuthSecuritySlide
+    title: "Authentication & Security",
+    component: AuthSecuritySlide,
   },
   {
     id: 7,
-    title: 'Payment System',
-    component: PaymentSlide
+    title: "Payment System",
+    component: PaymentSlide,
   },
   {
     id: 8,
-    title: 'Database Design',
-    component: DatabaseSlide
+    title: "Database Design",
+    component: DatabaseSlide,
   },
   {
     id: 9,
-    title: 'User Dashboard',
-    component: UserDashboardSlide
+    title: "User Dashboard",
+    component: UserDashboardSlide,
   },
   {
     id: 10,
-    title: 'Admin Dashboard',
-    component: AdminDashboardSlide
+    title: "Admin Dashboard",
+    component: AdminDashboardSlide,
   },
   {
     id: 11,
-    title: 'System Architecture',
-    component: ArchitectureSlide
+    title: "System Architecture",
+    component: ArchitectureSlide,
   },
   {
     id: 12,
-    title: 'Challenges Faced',
-    component: ChallengesSlide
+    title: "Challenges Faced",
+    component: ChallengesSlide,
   },
   {
     id: 13,
-    title: 'Future Improvements',
-    component: FutureSlide
+    title: "Future Improvements",
+    component: FutureSlide,
   },
   {
     id: 14,
-    title: 'Conclusion',
-    component: ConclusionSlide
+    title: "Conclusion",
+    component: ConclusionSlide,
   },
   {
     id: 15,
-    title: 'Thank You',
-    component: ThankYouSlide
-  }
+    title: "Thank You",
+    component: ThankYouSlide,
+  },
 ];
 
 function TitleSlide() {
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-green-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-green-50 to-white dark:from-gray-900 dark:to-gray-800 px-4 py-8">
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ type: 'spring', duration: 0.8 }}
-        // className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mb-8 shadow-2xl"
-        className="w-32 h-32 rounded-full flex items-center justify-center mb-8 "
+        transition={{ type: "spring", duration: 0.8 }}
+        className="rounded-full flex items-center justify-center mb-4 md:mb-8 "
       >
-        {/* <Leaf className="w-12 h-12 text-white" /> */}
-        <img src={logo} alt="Logo" />
+        {/* <Leaf className="w-8 h-8 md:w-12 md:h-12 text-white" /> */}
+        <img src={img} alt="Fresh Logo" className="w-32 h-auto" />
       </motion.div>
 
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="text-6xl mb-3 text-gray-800 dark:text-white"
+        className="text-4xl md:text-6xl mb-2 md:mb-3 text-gray-800 dark:text-white"
       >
         Fresh
       </motion.h1>
@@ -136,7 +135,7 @@ function TitleSlide() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="text-2xl text-green-600 dark:text-green-400 mb-2"
+        className="text-lg md:text-2xl text-green-600 dark:text-green-400 mb-1 md:mb-2 text-center"
       >
         React/Redux eCommerce Website
       </motion.p>
@@ -145,27 +144,43 @@ function TitleSlide() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        className="text-xl text-gray-600 dark:text-gray-300 mb-12"
+        className="text-base md:text-xl text-gray-600 dark:text-gray-300 mb-6 md:mb-12 text-center"
       >
-        Final Year Project Presentation
+         Final Year Project Presentation (Phase I- Proposal) 
       </motion.p>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8 }}
-        className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 max-w-2xl border dark:border-gray-700"
+        className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 md:p-8 w-full max-w-2xl border dark:border-gray-700"
       >
-        <p className="text-lg mb-4 text-gray-700 dark:text-gray-300">Presented By:</p>
-        <div className="space-y-2">
-          <p className="text-gray-800 dark:text-gray-200"><span className="text-green-600 dark:text-green-400">●</span> Md Abdur Rahman (Team Leader)</p>
-          <p className="text-gray-800 dark:text-gray-200"><span className="text-green-600 dark:text-green-400">●</span> Md. Nayem Uddin</p>
-          <p className="text-gray-800 dark:text-gray-200"><span className="text-green-600 dark:text-green-400">●</span> Md Anwar Hossain</p>
-          <p className="text-gray-800 dark:text-gray-200"><span className="text-green-600 dark:text-green-400">●</span> Md Habibur Rahman</p>
+        <p className="text-base md:text-lg mb-3 md:mb-4 text-gray-700 dark:text-gray-300">
+          Presented By:
+        </p>
+        <div className="space-y-1.5 md:space-y-2 text-sm md:text-base">
+          <p className="text-gray-800 dark:text-gray-200">
+            <span className="text-green-600 dark:text-green-400">●</span> Md
+            Abdur Rahman (Team Leader) [ 2233091141 ] 
+          </p>
+          <p className="text-gray-800 dark:text-gray-200">
+            <span className="text-green-600 dark:text-green-400">●</span> Md.
+            Nayem Uddin [ 2233091004 ]
+          </p>
+          <p className="text-gray-800 dark:text-gray-200">
+            <span className="text-green-600 dark:text-green-400">●</span> Md
+            Anwar Hossain [ 2233091123 ]
+          </p>
+          <p className="text-gray-800 dark:text-gray-200">
+            <span className="text-green-600 dark:text-green-400">●</span> Md
+            Habibur Rahman [ 2233091142 ]
+          </p>
         </div>
-        <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+        <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200 dark:border-gray-700 text-sm md:text-base">
           <p className="text-gray-700 dark:text-gray-300">Department of CSE</p>
-          <p className="text-green-600 dark:text-green-400">Uttara University</p>
+          <p className="text-green-600 dark:text-green-400">
+            Uttara University
+          </p>
         </div>
       </motion.div>
     </div>
@@ -174,10 +189,10 @@ function TitleSlide() {
 
 function ProjectOverviewSlide() {
   const features = [
-    { icon: Globe, text: 'Modern responsive eCommerce platform' },
-    { icon: Leaf, text: 'Organic food & multipurpose online store' },
-    { icon: Lock, text: 'Secure authentication & payment system' },
-    { icon: BarChart3, text: 'User & admin dashboard' }
+    { icon: Globe, text: "Modern responsive eCommerce platform" },
+    { icon: Leaf, text: "Organic food & multipurpose online store" },
+    { icon: Lock, text: "Secure authentication & payment system" },
+    { icon: BarChart3, text: "User & admin dashboard" },
   ];
 
   return (
@@ -202,10 +217,10 @@ function ProjectOverviewSlide() {
 
 function ObjectivesSlide() {
   const objectives = [
-    { icon: Target, text: 'Build modern eCommerce system' },
-    { icon: Shield, text: 'Secure authentication' },
-    { icon: CreditCard, text: 'Online payment integration' },
-    { icon: Smartphone, text: 'Responsive user experience' }
+    { icon: Target, text: "Build modern eCommerce system" },
+    { icon: Shield, text: "Secure authentication" },
+    { icon: CreditCard, text: "Online payment integration" },
+    { icon: Smartphone, text: "Responsive user experience" },
   ];
 
   return (
@@ -285,12 +300,36 @@ function TechnologiesSlide() {
 
 function FeaturesSlide() {
   const features = [
-    { icon: Smartphone, text: 'Responsive Design', color: 'from-green-400 to-green-500' },
-    { icon: ShoppingBag, text: 'Shopping Cart', color: 'from-blue-400 to-blue-500' },
-    { icon: Users, text: 'User Dashboard', color: 'from-purple-400 to-purple-500' },
-    { icon: Settings, text: 'Admin Dashboard', color: 'from-orange-400 to-orange-500' },
-    { icon: CreditCard, text: 'Stripe Payment', color: 'from-pink-400 to-pink-500' },
-    { icon: Package, text: 'Product Management', color: 'from-teal-400 to-teal-500' }
+    {
+      icon: Smartphone,
+      text: "Responsive Design",
+      color: "from-green-400 to-green-500",
+    },
+    {
+      icon: ShoppingBag,
+      text: "Shopping Cart",
+      color: "from-blue-400 to-blue-500",
+    },
+    {
+      icon: Users,
+      text: "User Dashboard",
+      color: "from-purple-400 to-purple-500",
+    },
+    {
+      icon: Settings,
+      text: "Admin Dashboard",
+      color: "from-orange-400 to-orange-500",
+    },
+    {
+      icon: CreditCard,
+      text: "Stripe Payment",
+      color: "from-pink-400 to-pink-500",
+    },
+    {
+      icon: Package,
+      text: "Product Management",
+      color: "from-teal-400 to-teal-500",
+    },
   ];
 
   return (
@@ -301,7 +340,7 @@ function FeaturesSlide() {
             key={index}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.1, type: 'spring' }}
+            transition={{ delay: index * 0.1, type: "spring" }}
             className={`bg-gradient-to-br ${feature.color} p-6 rounded-xl shadow-lg text-white flex flex-col items-center text-center`}
           >
             <feature.icon className="w-12 h-12 mb-3" />
@@ -315,10 +354,22 @@ function FeaturesSlide() {
 
 function AuthSecuritySlide() {
   const items = [
-    { icon: Shield, title: 'Firebase Authentication', desc: 'Secure user authentication' },
-    { icon: Lock, title: 'JWT Security', desc: 'Token-based authorization' },
-    { icon: CheckCircle2, title: 'Protected Routes', desc: 'Route-level protection' },
-    { icon: FileText, title: 'Express Validator', desc: 'Input validation & sanitization' }
+    {
+      icon: Shield,
+      title: "Firebase Authentication",
+      desc: "Secure user authentication",
+    },
+    { icon: Lock, title: "JWT Security", desc: "Token-based authorization" },
+    {
+      icon: CheckCircle2,
+      title: "Protected Routes",
+      desc: "Route-level protection",
+    },
+    {
+      icon: FileText,
+      title: "Express Validator",
+      desc: "Input validation & sanitization",
+    },
   ];
 
   return (
@@ -336,9 +387,13 @@ function AuthSecuritySlide() {
               <div className="w-14 h-14 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center">
                 <item.icon className="w-7 h-7 text-green-600 dark:text-green-400" />
               </div>
-              <h3 className="text-xl text-gray-800 dark:text-gray-200">{item.title}</h3>
+              <h3 className="text-xl text-gray-800 dark:text-gray-200">
+                {item.title}
+              </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 ml-[4.5rem]">{item.desc}</p>
+            <p className="text-gray-600 dark:text-gray-400 ml-[4.5rem]">
+              {item.desc}
+            </p>
           </motion.div>
         ))}
       </div>
@@ -353,7 +408,7 @@ function PaymentSlide() {
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ type: 'spring', duration: 0.8 }}
+          transition={{ type: "spring", duration: 0.8 }}
           className="w-32 h-32 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mb-8 shadow-2xl"
         >
           <CreditCard className="w-16 h-16 text-white" />
@@ -369,8 +424,12 @@ function PaymentSlide() {
             <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
               <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">Stripe Payment Gateway</h3>
-            <p className="text-gray-600 dark:text-gray-400">Industry-standard payment processing</p>
+            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">
+              Stripe Payment Gateway
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              Industry-standard payment processing
+            </p>
           </motion.div>
 
           <motion.div
@@ -382,8 +441,12 @@ function PaymentSlide() {
             <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
               <Shield className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">Secure Transactions</h3>
-            <p className="text-gray-600 dark:text-gray-400">End-to-end encryption</p>
+            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">
+              Secure Transactions
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              End-to-end encryption
+            </p>
           </motion.div>
 
           <motion.div
@@ -395,8 +458,12 @@ function PaymentSlide() {
             <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
               <Zap className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">Real-time Processing</h3>
-            <p className="text-gray-600 dark:text-gray-400">Instant payment confirmation</p>
+            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">
+              Real-time Processing
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              Instant payment confirmation
+            </p>
           </motion.div>
         </div>
       </div>
@@ -405,7 +472,7 @@ function PaymentSlide() {
 }
 
 function DatabaseSlide() {
-  const collections = ['Users', 'Products', 'Orders', 'Payments'];
+  const collections = ["Users", "Products", "Orders", "Payments"];
 
   return (
     <SlideLayout title="Database Design" icon={Database}>
@@ -413,7 +480,7 @@ function DatabaseSlide() {
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ type: 'spring' }}
+          transition={{ type: "spring" }}
           className="w-24 h-24 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center mb-8 shadow-xl"
         >
           <Database className="w-12 h-12 text-green-400" />
@@ -434,7 +501,7 @@ function DatabaseSlide() {
               key={index}
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 + index * 0.1, type: 'spring' }}
+              transition={{ delay: 0.3 + index * 0.1, type: "spring" }}
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center border-2 border-green-500"
             >
               <Layers className="w-8 h-8 text-green-600 dark:text-green-400 mx-auto mb-2" />
@@ -449,10 +516,10 @@ function DatabaseSlide() {
 
 function UserDashboardSlide() {
   const features = [
-    { icon: Store, text: 'Browse Products' },
-    { icon: ShoppingBag, text: 'Add to Cart' },
-    { icon: CheckCircle2, text: 'Place Orders' },
-    { icon: FileText, text: 'Order History' }
+    { icon: Store, text: "Browse Products" },
+    { icon: ShoppingBag, text: "Add to Cart" },
+    { icon: CheckCircle2, text: "Place Orders" },
+    { icon: FileText, text: "Order History" },
   ];
 
   return (
@@ -467,7 +534,9 @@ function UserDashboardSlide() {
             className="bg-gradient-to-br from-green-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg border border-green-200 dark:border-green-900 hover:shadow-2xl transition-shadow"
           >
             <feature.icon className="w-14 h-14 text-green-600 dark:text-green-400 mb-4" />
-            <p className="text-xl text-gray-800 dark:text-gray-200">{feature.text}</p>
+            <p className="text-xl text-gray-800 dark:text-gray-200">
+              {feature.text}
+            </p>
           </motion.div>
         ))}
       </div>
@@ -477,10 +546,26 @@ function UserDashboardSlide() {
 
 function AdminDashboardSlide() {
   const features = [
-    { icon: Package, text: 'Manage Products', color: 'from-blue-500 to-blue-600' },
-    { icon: Users, text: 'Manage Users', color: 'from-purple-500 to-purple-600' },
-    { icon: FileText, text: 'Manage Orders', color: 'from-orange-500 to-orange-600' },
-    { icon: TrendingUp, text: 'Sales Monitoring', color: 'from-green-500 to-green-600' }
+    {
+      icon: Package,
+      text: "Manage Products",
+      color: "from-blue-500 to-blue-600",
+    },
+    {
+      icon: Users,
+      text: "Manage Users",
+      color: "from-purple-500 to-purple-600",
+    },
+    {
+      icon: FileText,
+      text: "Manage Orders",
+      color: "from-orange-500 to-orange-600",
+    },
+    {
+      icon: TrendingUp,
+      text: "Sales Monitoring",
+      color: "from-green-500 to-green-600",
+    },
   ];
 
   return (
@@ -566,9 +651,13 @@ function ArchitectureSlide() {
           >
             <div className="flex items-center gap-3 mb-2">
               <Shield className="w-8 h-8 text-orange-600 dark:text-orange-400" />
-              <p className="text-lg text-gray-800 dark:text-gray-200">Authentication</p>
+              <p className="text-lg text-gray-800 dark:text-gray-200">
+                Authentication
+              </p>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 ml-11">Firebase + JWT</p>
+            <p className="text-gray-600 dark:text-gray-400 ml-11">
+              Firebase + JWT
+            </p>
           </motion.div>
 
           <motion.div
@@ -579,7 +668,9 @@ function ArchitectureSlide() {
           >
             <div className="flex items-center gap-3 mb-2">
               <CreditCard className="w-8 h-8 text-purple-600 dark:text-purple-400" />
-              <p className="text-lg text-gray-800 dark:text-gray-200">Payment</p>
+              <p className="text-lg text-gray-800 dark:text-gray-200">
+                Payment
+              </p>
             </div>
             <p className="text-gray-600 dark:text-gray-400 ml-11">Stripe</p>
           </motion.div>
@@ -591,10 +682,10 @@ function ArchitectureSlide() {
 
 function ChallengesSlide() {
   const challenges = [
-    'Authentication Management',
-    'Redux State Management',
-    'Payment Integration',
-    'API Handling'
+    "Authentication Management",
+    "Redux State Management",
+    "Payment Integration",
+    "API Handling",
   ];
 
   return (
@@ -609,7 +700,9 @@ function ChallengesSlide() {
             className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-orange-500 flex items-center gap-4"
           >
             <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-orange-600 dark:text-orange-400">{index + 1}</span>
+              <span className="text-orange-600 dark:text-orange-400">
+                {index + 1}
+              </span>
             </div>
             <p className="text-gray-800 dark:text-gray-200">{challenge}</p>
           </motion.div>
@@ -621,10 +714,26 @@ function ChallengesSlide() {
 
 function FutureSlide() {
   const improvements = [
-    { icon: Sparkles, text: 'AI Recommendations', color: 'from-purple-500 to-purple-600' },
-    { icon: Smartphone, text: 'Mobile App', color: 'from-blue-500 to-blue-600' },
-    { icon: MessageSquare, text: 'Live Chat', color: 'from-green-500 to-green-600' },
-    { icon: Store, text: 'Multi-vendor Support', color: 'from-orange-500 to-orange-600' }
+    {
+      icon: Sparkles,
+      text: "AI Recommendations",
+      color: "from-purple-500 to-purple-600",
+    },
+    {
+      icon: Smartphone,
+      text: "Mobile App",
+      color: "from-blue-500 to-blue-600",
+    },
+    {
+      icon: MessageSquare,
+      text: "Live Chat",
+      color: "from-green-500 to-green-600",
+    },
+    {
+      icon: Store,
+      text: "Multi-vendor Support",
+      color: "from-orange-500 to-orange-600",
+    },
   ];
 
   return (
@@ -635,7 +744,7 @@ function FutureSlide() {
             key={index}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.1, type: 'spring' }}
+            transition={{ delay: index * 0.1, type: "spring" }}
             className={`bg-gradient-to-br ${item.color} p-8 rounded-xl shadow-xl text-white flex items-center gap-4`}
           >
             <item.icon className="w-12 h-12" />
@@ -649,9 +758,9 @@ function FutureSlide() {
 
 function ConclusionSlide() {
   const points = [
-    'Full-stack MERN eCommerce solution',
-    'Secure & responsive platform',
-    'Practical industry-level development experience'
+    "Full-stack MERN eCommerce solution",
+    "Secure & responsive platform",
+    "Practical industry-level development experience",
   ];
 
   return (
@@ -660,7 +769,7 @@ function ConclusionSlide() {
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ type: 'spring', duration: 0.8 }}
+          transition={{ type: "spring", duration: 0.8 }}
           className="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mb-8 shadow-2xl"
         >
           <CheckCircle2 className="w-12 h-12 text-white" />
@@ -676,7 +785,9 @@ function ConclusionSlide() {
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-green-500 flex items-center gap-4"
             >
               <CheckCircle2 className="w-8 h-8 text-green-600 dark:text-green-400 flex-shrink-0" />
-              <p className="text-xl text-gray-800 dark:text-gray-200">{point}</p>
+              <p className="text-xl text-gray-800 dark:text-gray-200">
+                {point}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -687,23 +798,22 @@ function ConclusionSlide() {
 
 function ThankYouSlide() {
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-green-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-green-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-4 py-8">
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ type: 'spring', duration: 0.8 }}
-        // className="w-32 h-32 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mb-8 shadow-2xl"
-        className="w-32 h-32 rounded-full flex items-center justify-center mb-8"
+        transition={{ type: "spring", duration: 0.8 }}
+        className=" rounded-full flex items-center justify-center mb-6 md:mb-8 "
       >
-        {/* <Leaf className="w-16 h-16 text-white" /> */}
-                <img src={logo} alt="Logo" />
+        {/* <Leaf className="w-10 h-10 md:w-16 md:h-16 text-white" /> */}
+        <img src={img} alt="Fresh Logo" className="w-32 h-auto" />
       </motion.div>
 
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="text-6xl mb-4 text-gray-800 dark:text-white"
+        className="text-4xl md:text-6xl mb-3 md:mb-4 text-gray-800 dark:text-white"
       >
         Thank You!
       </motion.h1>
@@ -712,7 +822,7 @@ function ThankYouSlide() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="text-3xl text-green-600 dark:text-green-400 mb-12"
+        className="text-xl md:text-3xl text-green-600 dark:text-green-400 mb-8 md:mb-12 text-center"
       >
         Questions & Answers
       </motion.p>
@@ -721,31 +831,43 @@ function ThankYouSlide() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
-        className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border dark:border-gray-700"
+        className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 md:p-8 border dark:border-gray-700 text-center"
       >
-        <p className="text-xl text-gray-700 dark:text-gray-300 mb-4">Fresh - MERN eCommerce Platform</p>
-        <p className="text-gray-600 dark:text-gray-400">Department of CSE, Uttara University</p>
+        <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-2 md:mb-4">
+          Fresh - MERN eCommerce Platform
+        </p>
+        <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
+          Department of CSE, Uttara University
+        </p>
       </motion.div>
     </div>
   );
 }
 
-function SlideLayout({ title, icon: Icon, children }: { title: string; icon: any; children: React.ReactNode }) {
+function SlideLayout({
+  title,
+  icon: Icon,
+  children,
+}: {
+  title: string;
+  icon: any;
+  children: React.ReactNode;
+}) {
   return (
-    <div className="h-full flex flex-col p-12 bg-gray-50 dark:bg-gray-900">
+    <div className="h-full flex flex-col p-4 md:p-8 lg:p-12 bg-gray-50 dark:bg-gray-900">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex items-center gap-4 mb-8"
+        className="flex items-center gap-2 md:gap-4 mb-4 md:mb-8"
       >
-        <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
-          <Icon className="w-7 h-7 text-white" />
+        <div className="w-8 h-8 md:w-12 md:h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+          <Icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
         </div>
-        <h2 className="text-4xl text-gray-800 dark:text-white">{title}</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-800 dark:text-white">
+          {title}
+        </h2>
       </motion.div>
-      <div className="flex-1 overflow-auto">
-        {children}
-      </div>
+      <div className="flex-1 overflow-auto">{children}</div>
     </div>
   );
 }
@@ -753,13 +875,13 @@ function SlideLayout({ title, icon: Icon, children }: { title: string; icon: any
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     if (isDark) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDark]);
 
@@ -786,26 +908,41 @@ export default function App() {
     setCurrentSlide(index);
   };
 
+  const swipeConfidenceThreshold = 10000;
+  const swipePower = (offset: number, velocity: number) => {
+    return Math.abs(offset) * velocity;
+  };
+
+  const handleDragEnd = (e: any, { offset, velocity }: any) => {
+    const swipe = swipePower(offset.x, velocity.x);
+
+    if (swipe < -swipeConfidenceThreshold) {
+      nextSlide();
+    } else if (swipe > swipeConfidenceThreshold) {
+      prevSlide();
+    }
+  };
+
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? 1000 : -1000,
-      opacity: 0
+      opacity: 0,
     }),
     center: {
       x: 0,
-      opacity: 1
+      opacity: 1,
     },
     exit: (direction: number) => ({
       x: direction < 0 ? 1000 : -1000,
-      opacity: 0
-    })
+      opacity: 0,
+    }),
   };
 
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
     <div className="size-full bg-gray-50 dark:bg-gray-900 flex flex-col">
-      <div className="flex-1 relative overflow-hidden">
+      <div className="flex-1 relative overflow-hidden touch-none">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={currentSlide}
@@ -815,63 +952,67 @@ export default function App() {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: 'spring', stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 }
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
             }}
-            className="absolute inset-0"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={handleDragEnd}
+            className="absolute inset-0 cursor-grab active:cursor-grabbing"
           >
             <CurrentSlideComponent />
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <div className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 p-4">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
+      <div className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 p-3 md:p-4">
+        <div className="flex items-center justify-between max-w-7xl mx-auto gap-2">
           <button
             onClick={prevSlide}
             disabled={currentSlide === 0}
-            className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-green-600 transition-colors"
+            className="flex items-center gap-1 md:gap-2 px-2 md:px-4 py-2 bg-green-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-green-600 transition-colors text-sm md:text-base"
           >
-            <ChevronLeft className="w-5 h-5" />
-            Previous
+            <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
+            <span className="hidden sm:inline">Previous</span>
           </button>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 md:gap-2 overflow-x-auto max-w-[200px] md:max-w-none">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
+                className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all flex-shrink-0 ${
                   index === currentSlide
-                    ? 'bg-green-500 w-8'
-                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                    ? "bg-green-500 w-6 md:w-8"
+                    : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
                 }`}
               />
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              className="p-1.5 md:p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
               aria-label="Toggle theme"
             >
               {isDark ? (
-                <Sun className="w-5 h-5 text-yellow-500" />
+                <Sun className="w-4 h-4 md:w-5 md:h-5 text-yellow-500" />
               ) : (
-                <Moon className="w-5 h-5 text-gray-700" />
+                <Moon className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
               )}
             </button>
-            <span className="text-gray-600 dark:text-gray-400">
-              {currentSlide + 1} / {slides.length}
+            <span className="text-xs md:text-base text-gray-600 dark:text-gray-400 whitespace-nowrap">
+              {currentSlide + 1}/{slides.length}
             </span>
             <button
               onClick={nextSlide}
               disabled={currentSlide === slides.length - 1}
-              className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-green-600 transition-colors"
+              className="flex items-center gap-1 md:gap-2 px-2 md:px-4 py-2 bg-green-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-green-600 transition-colors text-sm md:text-base"
             >
-              Next
-              <ChevronRight className="w-5 h-5" />
+              <span className="hidden sm:inline">Next</span>
+              <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
             </button>
           </div>
         </div>
