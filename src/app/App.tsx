@@ -116,7 +116,7 @@ function TitleSlide() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: "spring", duration: 0.8 }}
-        className="rounded-full flex items-center justify-center mb-4 md:mb-8 "
+        className="rounded-full flex items-center justify-center mb-4 "
       >
         {/* <Leaf className="w-8 h-8 md:w-12 md:h-12 text-white" /> */}
         <img src={img} alt="Fresh Logo" className="w-32 h-auto" />
@@ -144,7 +144,7 @@ function TitleSlide() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        className="text-base md:text-xl text-gray-600 dark:text-gray-300 mb-6 md:mb-12 text-center"
+        className="text-base md:text-xl text-gray-600 dark:text-gray-300 mb-6 text-center"
       >
          Final Year Project Presentation (Phase I- Proposal) 
       </motion.p>
@@ -174,6 +174,9 @@ function TitleSlide() {
           <p className="text-gray-800 dark:text-gray-200">
             <span className="text-green-600 dark:text-green-400">●</span> Md
             Habibur Rahman [ 2233091142 ]
+          </p>
+          <p className="text-gray-800 dark:text-gray-200">
+            <span className="text-green-600 dark:text-green-400">●</span> Sanzida Islam (supervisor)
           </p>
         </div>
         <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200 dark:border-gray-700 text-sm md:text-base">
