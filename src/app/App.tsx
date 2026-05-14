@@ -135,7 +135,7 @@ function TitleSlide() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="text-lg md:text-2xl text-green-600 dark:text-green-400 mb-1 md:mb-2 text-center"
+        className="text-lg md:text-2xl font-medium text-green-600 dark:text-green-400 mb-1 md:mb-2 text-center"
       >
         React/Redux eCommerce Website
       </motion.p>
@@ -144,7 +144,7 @@ function TitleSlide() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        className="text-base md:text-xl text-gray-600 dark:text-gray-300 mb-6 text-center"
+        className="text-base md:text-xl font-medium text-gray-600 dark:text-gray-300 mb-6 text-center"
       >
          Final Year Project Presentation (Phase I- Proposal) 
       </motion.p>
@@ -155,27 +155,27 @@ function TitleSlide() {
         transition={{ delay: 0.8 }}
         className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 md:p-8 w-full max-w-2xl border dark:border-gray-700"
       >
-        <p className="text-base md:text-lg mb-3 md:mb-4 text-gray-700 dark:text-gray-300">
+        <p className="text-base md:text-xl font-medium mb-3 md:mb-4 text-gray-700 dark:text-gray-300">
           Presented By:
         </p>
         <div className="space-y-1.5 md:space-y-2 text-sm md:text-base">
-          <p className="text-gray-800 dark:text-gray-200">
+          <p className="text-gray-800 text-lg dark:text-gray-200">
             <span className="text-green-600 dark:text-green-400">●</span> Md
             Abdur Rahman (Team Leader) [ 2233091141 ] 
           </p>
-          <p className="text-gray-800 dark:text-gray-200">
+          <p className="text-gray-800 text-lg dark:text-gray-200">
             <span className="text-green-600 dark:text-green-400">●</span> Md.
             Nayem Uddin [ 2233091004 ]
           </p>
-          <p className="text-gray-800 dark:text-gray-200">
+          <p className="text-gray-800 text-lg dark:text-gray-200">
             <span className="text-green-600 dark:text-green-400">●</span> Md
             Anwar Hossain [ 2233091123 ]
           </p>
-          <p className="text-gray-800 dark:text-gray-200">
+          <p className="text-gray-800 text-lg dark:text-gray-200">
             <span className="text-green-600 dark:text-green-400">●</span> Md
             Habibur Rahman [ 2233091142 ]
           </p>
-          <p className="text-gray-800 dark:text-gray-200">
+          <p className="text-gray-800 text-lg dark:text-gray-200">
             <span className="text-green-600 dark:text-green-400">●</span> Sanzida Islam (supervisor)
           </p>
         </div>
@@ -207,10 +207,10 @@ function ProjectOverviewSlide() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-gradient-to-br from-green-50 to-white dark:from-gray-800 dark:to-gray-700 p-6 rounded-xl shadow-lg border border-green-100 dark:border-green-900"
+            className="flex flex-col items-center gap-4 bg-gradient-to-br from-green-50 to-white dark:from-gray-800 dark:to-gray-700 p-10 rounded-xl shadow-lg border border-green-100 dark:border-green-900"
           >
-            <feature.icon className="w-10 h-10 text-green-600 dark:text-green-400 mb-3" />
-            <p className="text-gray-700 dark:text-gray-300">{feature.text}</p>
+            <feature.icon className="w-10  h-10 text-green-600 dark:text-green-400 " />
+            <p className="text-gray-700 text-2xl font-medium dark:text-gray-300">{feature.text}</p>
           </motion.div>
         ))}
       </div>
@@ -235,12 +235,12 @@ function ObjectivesSlide() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 }}
-            className="flex items-start gap-4 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-green-500"
+            className="flex items-start gap-4 bg-white dark:bg-gray-800 p-10 rounded-xl shadow-lg border-l-4 border-green-500"
           >
             <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center flex-shrink-0">
               <obj.icon className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <p className="text-gray-700 dark:text-gray-300 pt-2">{obj.text}</p>
+            <p className="text-gray-700 text-2xl font-medium dark:text-gray-300 pt-2">{obj.text}</p>
           </motion.div>
         ))}
       </div>
@@ -259,11 +259,11 @@ function TechnologiesSlide() {
           className="bg-gradient-to-br from-green-500 to-green-600 p-6 rounded-xl shadow-xl text-white"
         >
           <Globe className="w-10 h-10 mb-4" />
-          <h3 className="text-xl mb-4">Frontend</h3>
+          <h3 className="text-3xl font-medium mb-4">Frontend</h3>
           <div className="space-y-2">
-            <p className="bg-white/20 px-3 py-2 rounded-lg">React</p>
-            <p className="bg-white/20 px-3 py-2 rounded-lg">Redux Toolkit</p>
-            <p className="bg-white/20 px-3 py-2 rounded-lg">Tailwind CSS</p>
+            <p className="bg-white/20 px-3 py-2 text-xl font-medium rounded-lg">React</p>
+            <p className="bg-white/20 px-3 py-2 text-xl font-medium rounded-lg">Redux Toolkit</p>
+            <p className="bg-white/20 px-3 py-2 text-xl font-medium rounded-lg">Tailwind CSS</p>
           </div>
         </motion.div>
 
@@ -274,11 +274,11 @@ function TechnologiesSlide() {
           className="bg-gradient-to-br from-gray-700 to-gray-800 p-6 rounded-xl shadow-xl text-white"
         >
           <Server className="w-10 h-10 mb-4" />
-          <h3 className="text-xl mb-4">Backend</h3>
+          <h3 className="text-3xl font-medium mb-4">Backend</h3>
           <div className="space-y-2">
-            <p className="bg-white/20 px-3 py-2 rounded-lg">Node.js</p>
-            <p className="bg-white/20 px-3 py-2 rounded-lg">Express.js</p>
-            <p className="bg-white/20 px-3 py-2 rounded-lg">MongoDB</p>
+            <p className="bg-white/20 px-3 py-2 text-xl font-medium rounded-lg">Node.js</p>
+            <p className="bg-white/20 px-3 py-2 text-xl font-medium rounded-lg">Express.js</p>
+            <p className="bg-white/20 px-3 py-2 text-xl font-medium rounded-lg">MongoDB</p>
           </div>
         </motion.div>
 
@@ -289,11 +289,11 @@ function TechnologiesSlide() {
           className="bg-gradient-to-br from-blue-500 to-blue-600 p-6 rounded-xl shadow-xl text-white"
         >
           <Zap className="w-10 h-10 mb-4" />
-          <h3 className="text-xl mb-4">Other</h3>
+          <h3 className="text-3xl font-medium mb-4">Other</h3>
           <div className="space-y-2">
-            <p className="bg-white/20 px-3 py-2 rounded-lg">Firebase</p>
-            <p className="bg-white/20 px-3 py-2 rounded-lg">JWT</p>
-            <p className="bg-white/20 px-3 py-2 rounded-lg">Stripe</p>
+            <p className="bg-white/20 px-3 py-2 text-xl font-medium rounded-lg">Firebase</p>
+            <p className="bg-white/20 px-3 py-2 text-xl font-medium rounded-lg">JWT</p>
+            <p className="bg-white/20 px-3 py-2 text-xl font-medium rounded-lg">Stripe</p>
           </div>
         </motion.div>
       </div>
@@ -347,7 +347,7 @@ function FeaturesSlide() {
             className={`bg-gradient-to-br ${feature.color} p-6 rounded-xl shadow-lg text-white flex flex-col items-center text-center`}
           >
             <feature.icon className="w-12 h-12 mb-3" />
-            <p>{feature.text}</p>
+            <p className="text-xl font-medium ">{feature.text}</p>
           </motion.div>
         ))}
       </div>
@@ -386,15 +386,15 @@ function AuthSecuritySlide() {
             transition={{ delay: index * 0.15 }}
             className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-t-4 border-green-500"
           >
-            <div className="flex items-center gap-4 mb-3">
+            <div className="flex flex-col items-center gap-4 mb-3">
               <div className="w-14 h-14 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center">
                 <item.icon className="w-7 h-7 text-green-600 dark:text-green-400" />
               </div>
-              <h3 className="text-xl text-gray-800 dark:text-gray-200">
+              <h3 className="text-2xl text-gray-800 dark:text-gray-200">
                 {item.title}
               </h3>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 ml-[4.5rem]">
+            <p className="text-gray-600 text-xl font-medium text-center dark:text-gray-400">
               {item.desc}
             </p>
           </motion.div>
@@ -427,10 +427,10 @@ function PaymentSlide() {
             <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
               <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">
+            <h3 className="text-3xl mb-2 text-gray-800 dark:text-gray-200">
               Stripe Payment Gateway
             </h3>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-600 text-xl font-medium dark:text-gray-400">
               Industry-standard payment processing
             </p>
           </motion.div>
@@ -444,10 +444,10 @@ function PaymentSlide() {
             <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
               <Shield className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">
+            <h3 className="text-3xl mb-2 text-gray-800 dark:text-gray-200">
               Secure Transactions
             </h3>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-600 text-xl font-medium dark:text-gray-400">
               End-to-end encryption
             </p>
           </motion.div>
@@ -461,10 +461,10 @@ function PaymentSlide() {
             <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-3">
               <Zap className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">
+            <h3 className="text-3xl mb-2 text-gray-800 dark:text-gray-200">
               Real-time Processing
             </h3>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-600 text-xl font-medium dark:text-gray-400">
               Instant payment confirmation
             </p>
           </motion.div>
@@ -508,7 +508,7 @@ function DatabaseSlide() {
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg text-center border-2 border-green-500"
             >
               <Layers className="w-8 h-8 text-green-600 dark:text-green-400 mx-auto mb-2" />
-              <p className="text-gray-800 dark:text-gray-200">{collection}</p>
+              <p className="text-gray-800 text-xl font-medium dark:text-gray-200 ">{collection}</p>
             </motion.div>
           ))}
         </div>
@@ -534,10 +534,10 @@ function UserDashboardSlide() {
             initial={{ opacity: 0, rotate: -5 }}
             animate={{ opacity: 1, rotate: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-gradient-to-br from-green-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg border border-green-200 dark:border-green-900 hover:shadow-2xl transition-shadow"
+            className=" flex flex-col items-center bg-gradient-to-br from-green-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg border border-green-200 dark:border-green-900 hover:shadow-2xl transition-shadow"
           >
             <feature.icon className="w-14 h-14 text-green-600 dark:text-green-400 mb-4" />
-            <p className="text-xl text-gray-800 dark:text-gray-200">
+            <p className="text-3xl font-medium text-gray-800 dark:text-gray-200">
               {feature.text}
             </p>
           </motion.div>
@@ -580,10 +580,10 @@ function AdminDashboardSlide() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className={`bg-gradient-to-br ${feature.color} p-8 rounded-xl shadow-xl text-white`}
+            className={`bg-gradient-to-br ${feature.color} flex flex-col items-center p-8 rounded-xl shadow-xl text-white`}
           >
             <feature.icon className="w-14 h-14 mb-4" />
-            <p className="text-xl">{feature.text}</p>
+            <p className="text-2xl font-medium">{feature.text}</p>
           </motion.div>
         ))}
       </div>
@@ -603,7 +603,7 @@ function ArchitectureSlide() {
             className="bg-gradient-to-br from-blue-500 to-blue-600 px-8 py-6 rounded-xl shadow-xl text-white"
           >
             <Globe className="w-12 h-12 mx-auto mb-2" />
-            <p className="text-xl">React Frontend</p>
+            <p className="text-xl font-medium">React Frontend</p>
           </motion.div>
 
           <motion.div
@@ -622,7 +622,7 @@ function ArchitectureSlide() {
             className="bg-gradient-to-br from-green-500 to-green-600 px-8 py-6 rounded-xl shadow-xl text-white"
           >
             <Server className="w-12 h-12 mx-auto mb-2" />
-            <p className="text-xl">Express API</p>
+            <p className="text-xl font-medium">Express API</p>
           </motion.div>
 
           <motion.div
@@ -641,7 +641,7 @@ function ArchitectureSlide() {
             className="bg-gradient-to-br from-gray-700 to-gray-800 px-8 py-6 rounded-xl shadow-xl text-white"
           >
             <Database className="w-12 h-12 mx-auto mb-2" />
-            <p className="text-xl">MongoDB</p>
+            <p className="text-xl font-medium ">MongoDB</p>
           </motion.div>
         </div>
 
@@ -653,12 +653,12 @@ function ArchitectureSlide() {
             className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-orange-500"
           >
             <div className="flex items-center gap-3 mb-2">
-              <Shield className="w-8 h-8 text-orange-600 dark:text-orange-400" />
-              <p className="text-lg text-gray-800 dark:text-gray-200">
+              <Shield className="w-10 h-10 text-orange-600 dark:text-orange-400" />
+              <p className="text-3xl font-medium text-gray-800 dark:text-gray-200">
                 Authentication
               </p>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 ml-11">
+            <p className="text-gray-600 text-xl font-medium dark:text-gray-400 ml-11">
               Firebase + JWT
             </p>
           </motion.div>
@@ -670,12 +670,12 @@ function ArchitectureSlide() {
             className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-purple-500"
           >
             <div className="flex items-center gap-3 mb-2">
-              <CreditCard className="w-8 h-8 text-purple-600 dark:text-purple-400" />
-              <p className="text-lg text-gray-800 dark:text-gray-200">
+              <CreditCard className="w-10 h-10 text-purple-600 dark:text-purple-400" />
+              <p className="text-3xl font-medium text-gray-800 dark:text-gray-200">
                 Payment
               </p>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 ml-11">Stripe</p>
+            <p className="text-gray-600 text-xl font-medium dark:text-gray-400 ml-11">Stripe</p>
           </motion.div>
         </div>
       </div>
@@ -702,12 +702,12 @@ function ChallengesSlide() {
             transition={{ delay: index * 0.1 }}
             className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-orange-500 flex items-center gap-4"
           >
-            <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center flex-shrink-0">
               <span className="text-orange-600 dark:text-orange-400">
                 {index + 1}
               </span>
             </div>
-            <p className="text-gray-800 dark:text-gray-200">{challenge}</p>
+            <p className="text-gray-800 text-xl font-medium dark:text-gray-200">{challenge}</p>
           </motion.div>
         ))}
       </div>
@@ -751,7 +751,7 @@ function FutureSlide() {
             className={`bg-gradient-to-br ${item.color} p-8 rounded-xl shadow-xl text-white flex items-center gap-4`}
           >
             <item.icon className="w-12 h-12" />
-            <p className="text-xl">{item.text}</p>
+            <p className="text-2xl font-medium">{item.text}</p>
           </motion.div>
         ))}
       </div>
@@ -787,8 +787,8 @@ function ConclusionSlide() {
               transition={{ delay: index * 0.2 }}
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-green-500 flex items-center gap-4"
             >
-              <CheckCircle2 className="w-8 h-8 text-green-600 dark:text-green-400 flex-shrink-0" />
-              <p className="text-xl text-gray-800 dark:text-gray-200">
+              <CheckCircle2 className="w-10 h-10 text-green-600 dark:text-green-400 flex-shrink-0" />
+              <p className="text-2xl font-medium text-gray-800 dark:text-gray-200">
                 {point}
               </p>
             </motion.div>
@@ -836,10 +836,10 @@ function ThankYouSlide() {
         transition={{ delay: 0.7 }}
         className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 md:p-8 border dark:border-gray-700 text-center"
       >
-        <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-2 md:mb-4">
+        <p className="text-lg md:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-2 md:mb-4">
           Fresh - MERN eCommerce Platform
         </p>
-        <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
+        <p className="text-sm md:text-lg text-gray-600 dark:text-gray-400">
           Department of CSE, Uttara University
         </p>
       </motion.div>
