@@ -138,40 +138,36 @@
   * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
   */
 
-html {
-  font-size: 22px; /* Base font size for projector */
-}
+  html {
+    font-size: var(--font-size);
+  }
 
-h1 {
-  font-size: 2.5rem; /* 88px */
-  font-weight: 700;
-  line-height: 1.2;
-}
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
 
-h2 {
-  font-size: 2.5rem; /* 66px */
-  font-weight: 600;
-  line-height: 1.3;
-}
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
 
-h3 {
-  font-size: 2rem; /* প্রায় 48px */
-  font-weight: 600;
-  line-height: 1.4;
-}
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
 
-h4 {
-  font-size: 1.8rem; /* প্রায় 40px */
-  font-weight: 500;
-  line-height: 1.4;
-}
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
 
-p,
-label,
-button,
-input,
-li {
-    font-size: 1.1rem; /* var(--text-base);*/
+  label {
+    font-size: var(--text-base);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
   }
